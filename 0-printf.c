@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * _print_char - prints a character
@@ -28,6 +29,48 @@ int _print_string(va_list arlist)
 		strnlen++;
 	}
 	return (strnlen);
+}
+
+/**
+ * _print_integer - prints an integer (d or i specifier)
+ * @arlist: The va_list containing the integer to print
+ * Return: The number of characters printed
+ */
+int _print_integer(va_list arlist)
+{
+	int num = va_arg(arlist, int);
+	int pchars = 0;
+    
+	// Handle negative numbers
+	if (num < 0) {
+		_putchar('-');
+		pchars++;
+		num = -num;
+	}
+
+	// Handle zero separately
+	if (num == 0) {
+		_putchar('0');
+		return 1;
+	}
+
+	// Calculate the number of digits
+	int temp = num;
+	int num_digits = 0;
+	while (temp > 0) {
+		temp /= 10;
+		num_digits++;
+	}
+
+	// Print digits in reverse order
+	while (num > 0) {
+		int digit = num % 10;
+		_putchar('0' + digit);
+		pchars++;
+		num /= 10;
+	}
+
+	return pchars;
 }
 
 /**
@@ -67,6 +110,10 @@ int _printf(const char *format, ...)
 			{
 				pchars += _print_string(arlist);
 			}
+			else if (*format == 'd' || *format == 'i')
+			{
+				pchars += _print_integer(arlist);
+			}
 			else if (*format == '%')
 			{
 				_putchar('%');
@@ -78,3 +125,4 @@ int _printf(const char *format, ...)
 	va_end(arlist);
 	return (pchars);
 }
+
