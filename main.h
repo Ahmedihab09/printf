@@ -11,6 +11,7 @@
 
 int _putchar(char c);
 
+int (*finder(char str))(va_list arlist);
 int _print_char(va_list arlist);
 int _print_string(va_list arlist);
 int _print_percent(va_list arlist);
