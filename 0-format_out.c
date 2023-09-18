@@ -1,40 +1,32 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
 
-/**
- * _print_char - prints a character
- * @arlist: The va_list containing the character to print
- * Return: The number of characters printed
- */
 int _print_char(va_list arlist)
 {
 	char c = va_arg(arlist, int);
-
-	return (_putchar(c));
+	putchar(c);
+	return 1;
 }
 
-/**
- * _print_string - prints a string
- * @arlist: The va_list containing the string to print
- * Return: The number of characters printed
- */
 int _print_string(va_list arlist)
 {
 	char *strn = va_arg(arlist, char*);
-	int strnlen = 0;
+	if (strn == NULL)
+	{
+		fputs("(null)", stdout);
+		return 6;
+	}
 
+	int strnlen = 0;
 	while (strn[strnlen] != '\0')
 	{
-		_putchar(strn[strnlen]);
+		putchar(strn[strnlen]);
 		strnlen++;
 	}
-	return (strnlen);
+	return strnlen;
 }
 
-/**
- * _printf - a function that produces output according to a format.
- * @format: list of arguments passed
- * Return: Number of characters printed.
- */
 int _printf(const char *format, ...)
 {
 	int pchars = 0;
@@ -44,13 +36,13 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 	{
-		return (-1);
+		return -1;
 	}
 	while (*format)
 	{
 		if (*format != '%')
 		{
-			_putchar(*format);
+			putchar(*format);
 			pchars++;
 		}
 		else
@@ -69,12 +61,14 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == '%')
 			{
-				_putchar('%');
+				putchar('%');
 				pchars++;
 			}
 		}
 		format++;
 	}
 	va_end(arlist);
-	return (pchars);
+	return pchars;
 }
+
+
