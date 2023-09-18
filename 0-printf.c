@@ -40,30 +40,34 @@ int _print_integer(va_list arlist)
 {
 	int num = va_arg(arlist, int);
 	int pchars = 0;
-    
-	// Handle negative numbers
-	if (num < 0) {
+	int temp = num;
+	int num_digits = 0;
+
+	if (num < 0)
+	{
 		_putchar('-');
 		pchars++;
 		num = -num;
 	}
 
-	// Handle zero separately
-	if (num == 0) {
+
+	if (num == 0)
+	{
 		_putchar('0');
 		return 1;
 	}
 
-	// Calculate the number of digits
-	int temp = num;
-	int num_digits = 0;
-	while (temp > 0) {
+
+
+	while (temp > 0)
+	{
 		temp /= 10;
 		num_digits++;
 	}
 
-	// Print digits in reverse order
-	while (num > 0) {
+
+	while (num > 0)
+	{
 		int digit = num % 10;
 		_putchar('0' + digit);
 		pchars++;
