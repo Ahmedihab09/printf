@@ -42,4 +42,6 @@ int _print_string(va_list arlist)
  * Return: The number of characters printed
  */
 int _print_percent(va_list arlist)
+{
 
+}

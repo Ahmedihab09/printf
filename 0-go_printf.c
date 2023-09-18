@@ -7,7 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int pchars = 0
+	int pchars = 0;
 	va_list arlist;
 	int x;
 
