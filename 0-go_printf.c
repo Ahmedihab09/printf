@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 			x++;
 			if (format[x] == 'c')
 			{
-				char value = va_arg(arlist, int); // Use char type for %c
+				char value = va_arg(arlist, int);
 				pchars += _putchar(value);
 			}
 			else if (format[x] == 's')
