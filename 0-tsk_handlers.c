@@ -63,3 +63,20 @@ int _print_d(va_list arlist)
 	count = nums_print(pul_int, 0);
 	return (count);
 }
+/**
+ * _print_i - Prints an integer.
+ * @arlist: A va_list containing the integer to print.
+ *
+ * This function takes an integer from a va_list and prints it to the standard output.
+ *
+ * Return: The number of characters printed.
+ */
+int _print_i(va_list arlist)
+{
+        int count;
+        int pul_int = va_arg(arlist, int);
+
+        count = nums_print(pul_int, 0);
+        return (count);
+}
+

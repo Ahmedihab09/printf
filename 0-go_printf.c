@@ -26,16 +26,11 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			x++;
-			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd')
+			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd' || format[x] == 'i')
 			{
 				pchars += finder(format[x])(arlist);
 			}
-			else if (format[x] == 'i')
-			{
-				int value = va_arg(arlist, int);
 
-				pchars += _putchar_int(value);
-			}
 			else
 			{
 				pchars += _putchar('%');

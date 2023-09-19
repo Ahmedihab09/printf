@@ -22,6 +22,10 @@ int (*finder(char str))(va_list arlist)
 	{
 		return (&_print_d);
 	}
+	  else if (str == 'i')
+        {
+                return (&_print_i);
+        }
 
 	return (0);
 }
