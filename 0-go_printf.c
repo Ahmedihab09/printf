@@ -9,12 +9,6 @@ int _putchar_int(int n);
  * @format: list of arguments passed
  * Return: Number of characters printed.
  */
-int _putchar_int(int n);
-/**
- * _printf - a function that produces output according to a format.
- * @format: list of arguments passed
- * Return: Number of characters printed.
- */
 int _printf(const char *format, ...)
 {
 	int pchars = 0;
