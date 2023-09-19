@@ -14,7 +14,8 @@ int (*finder(char str))(va_list arlist);
 int _print_char(va_list arlist);
 int _print_string(va_list arlist);
 int _print_percent(va_list arlist);
-
+int _print_d(va_list arlist);
+	
 int _printf(const char *format, ...);
 
 #endif /* MAIN_H */
