@@ -17,6 +17,10 @@ int _print_percent(va_list arlist);
 int _print_d(va_list arlist);
 int _print_i(va_list arlist);
 int _print_b(va_list arlist);
+int _print_u(va_list arlist);
+int _print_o(va_list arlist);
+int _print_x(va_list arlist, int uppercase);
+int print_unsigned(va_list arlist, const char *format);
 
 int _printf(const char *format, ...);
 
