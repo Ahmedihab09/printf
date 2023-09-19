@@ -20,7 +20,7 @@ int (*finder(char str))(va_list arlist)
 	}
 	else if (str == 'd')
 	{
-		return (&_print_int);
+		return (&_print_d);
 	}
 
 	return (0);
