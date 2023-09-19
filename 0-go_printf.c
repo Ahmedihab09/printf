@@ -9,14 +9,17 @@ int _putchar_int(int n);
  * @format: list of arguments passed
  * Return: Number of characters printed.
  */
+int _putchar_int(int n);
+/**
+ * _printf - a function that produces output according to a format.
+ * @format: list of arguments passed
+ * Return: Number of characters printed.
+ */
 int _printf(const char *format, ...)
 {
 	int pchars = 0;
 	va_list arlist;
 	int x;
-	char buffer[BUFFER_SIZE];
-	int buffer_index = 0;
-
 
 	va_start(arlist, format);
 
@@ -27,60 +30,26 @@ int _printf(const char *format, ...)
 
 	for (x = 0; format[x] != '\0'; x++)
 	{
-		int (*printer)(va_list) = finder(format[x]);
-
 		if (format[x] == '%')
 		{
 			x++;
 			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd'
-				|| format[x] == 'i' || format[x] == 'b')
+			|| format[x] == 'i' || format[x] == 'b')
 			{
-				int len = 0;
-				if (buffer_index >= BUFFER_SIZE)
-				{
-					pchars += write(1, buffer, buffer_index);
-					buffer_index = 0;
-				}
-
-				if (printer != NULL)
-				{
-					len = printer(arlist);
-					if (len > 0)
-					{
-						buffer_index += len;
-						pchars += len;
-					}
-				}
+				pchars += finder(format[x])(arlist);
 			}
+
 			else
 			{
-				if (buffer_index >= BUFFER_SIZE)
-				{
-					pchars += write(1, buffer, buffer_index);
-					buffer_index = 0;
-				}
-				buffer[buffer_index++] = '%';
-				buffer[buffer_index++] = format[x];
-				pchars += 2;
+				pchars += _putchar('%');
+				pchars += _putchar(format[x]);
 			}
 		}
 		else
 		{
-			if (buffer_index >= BUFFER_SIZE)
-			{
-				pchars += write(1, buffer, buffer_index);
-				buffer_index = 0;
-			}
-			buffer[buffer_index++] = format[x];
-			pchars++;
+			pchars += _putchar(format[x]);
 		}
 	}
-
-	if (buffer_index > 0)
-	{
-		pchars += write(1, buffer, buffer_index);
-	}
-
 	va_end(arlist);
 	return (pchars);
 }
