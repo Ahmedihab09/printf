@@ -7,8 +7,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-#define BUFF_SIZE 1024
-
 int _putchar(char c);
 
 int nums_print(long nums, int counter);
