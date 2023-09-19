@@ -33,6 +33,7 @@ int _printf(const char *format, ...)
 			else if (format[x] == 'd' || format[x] == 'i')
 			{
 				int value = va_arg(arlist, int);
+
 				pchars += _putchar_int(value);
 			}
 			else
@@ -64,6 +65,7 @@ int _printf(const char *format, ...)
 int _putchar_int(int n)
 {
 	int count = 0;
+
 	if (n < 0)
 	{
 		_putchar('-');
