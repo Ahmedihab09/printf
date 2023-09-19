@@ -16,6 +16,7 @@ int _print_string(va_list arlist);
 int _print_percent(va_list arlist);
 int _print_d(va_list arlist);
 int _print_i(va_list arlist);
+int _print_b(va_list arlist);
 
 int _printf(const char *format, ...);
 

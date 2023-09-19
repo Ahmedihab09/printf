@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			x++;
-			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd' || format[x] == 'i')
+			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd' || format[x] == 'i' || format[x] == 'b')
 			{
 				pchars += finder(format[x])(arlist);
 			}

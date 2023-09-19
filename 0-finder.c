@@ -26,6 +26,10 @@ int (*finder(char str))(va_list arlist)
         {
                 return (&_print_i);
         }
+	    else if (str == 'b')
+        {
+                return (&_print_b);
+        }
 
 	return (0);
 }
