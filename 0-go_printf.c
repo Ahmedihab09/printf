@@ -4,6 +4,7 @@
 int _putchar(char c);
 
 int _putchar_int(int n);
+
 /**
  * _printf - a function that produces output according to a format.
  * @format: list of arguments passed
@@ -28,11 +29,26 @@ int _printf(const char *format, ...)
 		{
 			x++;
 			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd'
-			|| format[x] == 'i' || format[x] == 'b')
+				|| format[x] == 'i' || format[x] == 'b')
 			{
 				pchars += finder(format[x])(arlist);
 			}
-
+			else if (format[x] == 'u')
+			{
+				pchars += _print_u(arlist);
+			}
+			else if (format[x] == 'o')
+			{
+				pchars += _print_o(arlist);
+			}
+			else if (format[x] == 'x')
+			{
+				pchars += _print_x(arlist);
+			}
+			else if (format[x] == 'X')
+			{
+				pchars += _print_X(arlist);
+			}
 			else
 			{
 				pchars += _putchar('%');
@@ -47,6 +63,7 @@ int _printf(const char *format, ...)
 	va_end(arlist);
 	return (pchars);
 }
+
 /**
  * _putchar_int - Prints an integer to the standard output.
  * @n: The integer to be printed.
@@ -61,7 +78,6 @@ int _printf(const char *format, ...)
  * Return: The total number of characters printed, which includes the '-' sign
  *         for negative integers.
  */
-
 int _putchar_int(int n)
 {
 	int count = 0;
@@ -79,3 +95,4 @@ int _putchar_int(int n)
 	_putchar(n % 10 + '0');
 	return (count + 1);
 }
+
