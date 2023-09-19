@@ -13,7 +13,6 @@ int nums_print(long nums, int counter);
 int (*finder(char str))(va_list arlist);
 int _print_char(va_list arlist);
 int _print_string(va_list arlist);
-int _print_percent();
 
 int _printf(const char *format, ...);
 

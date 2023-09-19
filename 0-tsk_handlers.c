@@ -40,7 +40,3 @@ int _print_string(va_list arlist)
  * _print_percent - prints a '%'
  * Return: The number of characters printed
  */
-int _print_percent()
-{
-	return (_putchar('%'));
-}
