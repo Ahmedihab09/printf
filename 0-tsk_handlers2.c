@@ -13,6 +13,6 @@ int _print_p(va_list arlist)
 
 	snprintf(addressBuffer, sizeof(addressBuffer), "%p", ptr);
 	count = nums_print((unsigned long)ptr, 16);
-	return (count;
+	return (count);
 }
 
