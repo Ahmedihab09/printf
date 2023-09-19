@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
 
 int _putchar(char c);
 
@@ -26,14 +28,27 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			x++;
-			if (format[x] == 'c' || format[x] == 's')
+			if (format[x] == 'c')
 			{
-				pchars += finder(format[x])(arlist);
+				char value = va_arg(arlist, int); // Use char type for %c
+				pchars += _putchar(value);
+			}
+			else if (format[x] == 's')
+			{
+				char *value = va_arg(arlist, char *);
+				if (value == NULL)
+				{
+					value = "(null)";
+				}
+				while (*value)
+				{
+					pchars += _putchar(*value);
+					value++;
+				}
 			}
 			else if (format[x] == 'd' || format[x] == 'i')
 			{
 				int value = va_arg(arlist, int);
-
 				pchars += _putchar_int(value);
 			}
 			else
