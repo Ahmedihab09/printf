@@ -30,7 +30,7 @@ int (*finder(char str))(va_list arlist)
 	{
 		return (&_print_b);
 	}
-/*	else if (str == 'u')
+	else if (str == 'u')
 	{
 		return (&_print_unsigned);
 	}
@@ -41,6 +41,5 @@ int (*finder(char str))(va_list arlist)
 	{
 		return (&_print_x);
 	}
-*/
 	return (0);
 }
