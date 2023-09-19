@@ -67,7 +67,7 @@ int _print_o(va_list arlist)
 	int count;
 
 	snprintf(numBuffer, sizeof(numBuffer), "%o", num);
-	count = sign_print(numBuffer);
+	count =sign_print(numBuffer);
 
 	return count;
 }

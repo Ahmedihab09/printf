@@ -49,6 +49,15 @@ int _printf(const char *format, ...)
 			{
 				pchars += _print_X(arlist);
 			}
+			else if (format[x] == 'r')
+			{
+				pchars += _putchar('%');
+				pchars += _putchar('r');
+			}
+			else if (format[x] == 'p')
+			{
+				pchars += _print_p(arlist);
+			}
 			else
 			{
 				pchars += _putchar('%');
