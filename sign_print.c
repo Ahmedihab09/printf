@@ -16,5 +16,5 @@ int sign_print(const char *str)
                 str++;
                 count++;
         }
-        return count;
+        return (count);
 }
