@@ -26,7 +26,8 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			x++;
-			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd' || format[x] == 'i' || format[x] == 'b')
+			if (format[x] == 'c' || format[x] == 's' || format[x] == 'd'
+			|| format[x] == 'i' || format[x] == 'b')
 			{
 				pchars += finder(format[x])(arlist);
 			}
@@ -49,9 +50,12 @@ int _printf(const char *format, ...)
  * _putchar_int - Prints an integer to the standard output.
  * @n: The integer to be printed.
  *
- * This function takes an integer as input and recursively prints its digits
- * one by one to the standard output. If the integer is negative, it first
- * prints a '-' sign before printing the absolute value of the integer.
+ * This function takes an integer as input
+ * and recursively prints its digits
+ * one by one to the standard output.
+ * If the integer is negative, it first
+ * prints a '-' sign before printing the
+ * absolute value of the integer.
  *
  * Return: The total number of characters printed, which includes the '-' sign
  *         for negative integers.
