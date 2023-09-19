@@ -30,11 +30,18 @@ int (*finder(char str))(va_list arlist)
         {
                 return (&_print_b);
         }
-/*	else if (str == 'u' || str == 'o' || str == 'x' || str == 'X')
+/*	else if (str == 'u')
         {
                 return (&_print_unsigned);
         }
+	else if (str == 'o')
+        {
+                return (&_print_o);
+        }
+	else if (str == 'x' || str == 'X')
+        {
+                return (&_print_x);
+        }
 */
-
 	return (0);
 }
