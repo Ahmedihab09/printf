@@ -78,6 +78,6 @@ int _print_i(va_list arlist)
 	int pul_int = va_arg(arlist, int);
 
 	count = nums_print(pul_int, 0);
-	return (count);
+	return (cou);
 }
 
