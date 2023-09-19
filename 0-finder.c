@@ -18,7 +18,7 @@ int (*finder(char str))(va_list arlist)
 	{
 		return (&_print_percent);
 	}
-	if (str == 'd' || str == 'i')
+	if (str == 'd')
 	{
 		return (&_print_int);
 	}
