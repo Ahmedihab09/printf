@@ -54,14 +54,12 @@ int _print_percent(va_list arlist)
  *
  * Return: The number of characters printed.
  */
-int print_number(int num, int flags);
 
 int _print_d(va_list arlist)
 {
 	int count;
 	int pul_int = va_arg(arlist, int);
 
-	count = print_number(pul_int, 0);
+	count = nums_print(pul_int, 0);
 	return (count);
 }
-
