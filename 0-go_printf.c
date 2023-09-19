@@ -23,11 +23,7 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			x++;
-			if (format[x] == '%')
-			{
-				pchars += _putchar('%');
-			}
-			else if (format[x] == 'c' || format[x] == 's')
+			if (format[x] == 'c' || format[x] == 's' || format[x] == 's')
 			{
 				pchars += finder(format[x])(arlist);
 			}

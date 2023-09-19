@@ -38,5 +38,11 @@ int _print_string(va_list arlist)
 }
 /**
  * _print_percent - prints a '%'
+ * @arlist: the valist contain percent
  * Return: The number of characters printed
  */
+int _print_percent(va_list arlist)
+{
+	(void)arlist;
+	return (_putchar('%'));
+}
