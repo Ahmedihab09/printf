@@ -10,7 +10,7 @@
 int sign_print(const char *str)
 {
 	int count = 0;
-        while (*str)
+	while (*str)
         {
                 putchar(*str);
                 str++;
