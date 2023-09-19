@@ -41,7 +41,3 @@ int _print_string(va_list arlist)
  * @arlist: The valist containing %
  * Return: The number of characters printed
  */
-int _print_percent(va_list arlist)
-{
-
-}

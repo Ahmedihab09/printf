@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		if (format[x] == '%')
 		{
 			x++;
-			if (format[x] == 'c' || format[x] == '%' || format[x] == 's')
+			if (format[x] == 'c' || format[x] == 's')
 			{
 				pchars += finder(format[x])(arlist);
 			}
@@ -38,6 +38,6 @@ int _printf(const char *format, ...)
 			pchars += _putchar(format[x]);
 		}
 	}
-
+	va_end(arlist);
 	return (pchars);
 }
