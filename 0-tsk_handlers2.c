@@ -7,13 +7,13 @@
  */
 int _print_p(va_list arlist)
 {
-	void *ptr = va_arg(arlist, void *);
-	char addressBuffer[50];
-	int count;
+    void *ptr = va_arg(arlist, void *);
+    int count = 0;
 
-	snprintf(addressBuffer, sizeof(addressBuffer), "%p", ptr);
-	count = nums_print((unsigned long)ptr, 16); // Assuming nums_print handles hexadecimal.
+    count = hex_print(ptr);
 
-	return count;
+    return count;
 }
+
+
 

@@ -9,12 +9,12 @@
  */
 int sign_print(const char *str)
 {
-        int count = 0;
-        while (*str)
-        {
-                putchar(*str);
+	int count = 0;
+	while (*str)
+	{
+		putchar(*str);
                 str++;
                 count++;
         }
-        return count;
+        return (count);
 }
