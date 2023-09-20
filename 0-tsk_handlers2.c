@@ -21,13 +21,14 @@ int _print_S(va_list arlist)
 {
 	char *str = va_arg(arlist, char *);
 	int count = 0;
+	int i;
 
 	if (str == NULL)
 	{
 		str = "(null)";
 	}
 
-	for (int i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		if ((str[i] < 32 && str[i] > 0) || str[i] >= 127)
 		{
