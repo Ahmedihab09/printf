@@ -50,6 +50,10 @@ int (*finder(char str))(va_list arlist)
 	{
 		return (&_print_p);
 	}
+	else if (str == 'S')
+	{
+		return (&_print_S);
+	}
 
 	return (0);
 }

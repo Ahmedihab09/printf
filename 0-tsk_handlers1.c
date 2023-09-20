@@ -10,31 +10,32 @@
  */
 int _print_b(va_list arlist)
 {
-        unsigned int num = va_arg(arlist, unsigned int);
-        int count = 0;
-        int significantDigitFound = 0;
-        int i;
+	unsigned int num = va_arg(arlist, unsigned int);
+	int count = 0;
+	int significantDigitFound = 0;
+	int i;
 
-        for (i = sizeof(num) * 8 - 1; i >= 0; i--)
-        {
-                int bit = (num >> i) & 1;
+	for (i = sizeof(num) * 8 - 1; i >= 0; i--)
+	{
+		int bit = (num >> i) & 1;
 
-                if (bit == 1 || significantDigitFound)
-                {
-                        _putchar(bit + '0');
-                        count++;
-                        significantDigitFound = 1;
-                }
-        }
+		if (bit == 1 || significantDigitFound)
+		{
+			_putchar(bit + '0');
+			count++;
+			significantDigitFound = 1;
+		}
+	}
 
-        if (count == 0)
-        {
-                _putchar('0');
-                count++;
-        }
+	if (count == 0)
+	{
+		_putchar('0');
+		count++;
+	}
 
-        return (count);
+	return (count);
 }
+
 
 /**
  * _print_u - Print an unsigned decimal integer.
@@ -51,7 +52,7 @@ int _print_u(va_list arlist)
 	snprintf(numBuffer, sizeof(numBuffer), "%u", num);
 	count = sign_print(numBuffer);
 
-	return count;
+	return (count);
 }
 
 /**
@@ -67,9 +68,9 @@ int _print_o(va_list arlist)
 	int count;
 
 	snprintf(numBuffer, sizeof(numBuffer), "%o", num);
-	count =sign_print(numBuffer);
+	count = sign_print(numBuffer);
 
-	return count;
+	return (count);
 }
 
 /**
@@ -87,7 +88,7 @@ int _print_x(va_list arlist)
 	snprintf(numBuffer, sizeof(numBuffer), "%x", num);
 	count = sign_print(numBuffer);
 
-	return count;
+	return (count);
 }
 
 /**
@@ -105,6 +106,6 @@ int _print_X(va_list arlist)
 	snprintf(numBuffer, sizeof(numBuffer), "%X", num);
 	count = sign_print(numBuffer);
 
-	return count;
+	return (count);
 }
 

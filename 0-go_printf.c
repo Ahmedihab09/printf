@@ -58,6 +58,10 @@ int _printf(const char *format, ...)
 			{
 				pchars += _print_p(arlist);
 			}
+			else if (format[x] == 'S')
+			{
+				pchars += _print_S(arlist);
+			}
 			else
 			{
 				pchars += _putchar('%');

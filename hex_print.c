@@ -29,6 +29,6 @@ int hex_print(void *ptr)
 		count++;
 	}
 
-	return count;
+	return (count);
 }
 
