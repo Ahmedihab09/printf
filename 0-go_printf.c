@@ -51,8 +51,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[x] == 'r')
 			{
-				pchars += _putchar('%');
-				pchars += _putchar('r');
+				pchars += _print_r(arlist);
 			}
 			else if (format[x] == 'p')
 			{

@@ -25,6 +25,7 @@ int sign_print(const char *str);
 int _print_p(va_list arlist);
 int hex_print(void *ptr);
 int _print_S(va_list arlist);
+int _print_r(va_list arlist);
 
 int _printf(const char *format, ...);
 
